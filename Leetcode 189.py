@@ -5,11 +5,12 @@ def rotate(nums,k):
     
     """  GOTTA DO THIS **INPLACE** """
     
-    for loop in range(len(nums)-1,len(nums)-k-1,-1):
-        print(loop)
-        temp = nums[loop]
-        print("temp ; ", temp)
-        for index in range(loop-1,-1,-1):
+    for loop in range(k):
+        
+        max = len(nums) - 1
+        temp = nums[max]
+      
+        for index in range(max-1,-1,-1):
             
             nums[index + 1] = nums[index]
             
