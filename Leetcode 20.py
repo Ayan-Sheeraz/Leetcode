@@ -122,7 +122,7 @@ def isValid(s):
                         break
                     
                 if PowerThree > 0 :
-                    Array.append(newstring[index])
+                    Array.append(newstring[loop])
         print(Array)            
         CountBracket = 0
         Concatenate =  ""
