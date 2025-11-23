@@ -27,10 +27,10 @@ def check(s):
             Power_Three = Power_Three - 1
             
     
-    if Power_One != 0 and Power_Two != 0 and Power_Three != 0 :
-        return False
-    else:
+    if Power_One == 0 and Power_Two == 0 and Power_Three == 0 :
         return True
+    else:
+        return False
             
             
     
@@ -109,7 +109,7 @@ def isValid(s):
             Concatenate = Concatenate + Array[runner]
             
             for seconder in range(len(Array[runner])):
-                if (Array[runner])[seconder] == "(" or (Array[runner])[seconder] == ")" (Array[runner])[seconder] == "[" or (Array[runner])[seconder] == "]" (Array[runner])[seconder] == "{" or (Array[runner])[seconder] == "}" :
+                if (Array[runner])[seconder] == "(" or (Array[runner])[seconder] == ")" or (Array[runner])[seconder] == "[" or (Array[runner])[seconder] == "]" or (Array[runner])[seconder] == "{" or (Array[runner])[seconder] == "}" :
                     CountBracket = CountBracket + 1
                     
         newstring = Concatenate            
@@ -123,7 +123,12 @@ def isValid(s):
                         
                         
                         
-print(isValid("()"))
+# print(isValid("()"))
+# print(isValid("()[]{}"))
+print(isValid("(]"))
+print(isValid("([])"))
+print(isValid("([)]"))
+
         
     
     
