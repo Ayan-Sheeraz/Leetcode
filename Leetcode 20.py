@@ -45,6 +45,7 @@ def isValid(s):
     Array = []
     
     if check(newstring) == False :
+        print("check gives false")
         return False
         CountBracket = 0
     
@@ -54,6 +55,7 @@ def isValid(s):
             
             if newstring[loop] == "(" :
                 Head = loop
+                print(" *(* detected and head set to ",Head)
                 PowerOne = PowerOne + 1
                 for index in range(loop + 1,len(newstring)) :
                     
@@ -64,13 +66,22 @@ def isValid(s):
                         PowerOne = PowerOne - 1
                     
                     if PowerOne == 0 :
+                        
                         Tail = index
+                        print(" for () power one = 0 and now tail = ", Tail)
                         extract = newstring[Head + 1 : Tail]
+                        print("extract ", extract)
                         Array.append(extract)
                         break
+                            
+                    """ heading towards speacial casse"""
                     
+                if PowerOne > 0 :
+                    Array.append(newstring[index])
+                        
             if newstring[loop] == "[" :
                 Head = loop
+                print(" *[* detected and head set to ",Head)
                 PowerTwo = PowerTwo + 1
                 for index in range(loop + 1,len(newstring)) :
                     
@@ -82,27 +93,37 @@ def isValid(s):
                     
                     if PowerTwo == 0 :
                         Tail = index
+                        print(" for [] power two = 0 and now tail = ", Tail)
                         extract = newstring[Head + 1 : Tail]
                         Array.append(extract)
                         break
                     
+                if PowerTwo > 0 :
+                    Array.append(newstring[index])
+                    
             if newstring[loop] == "{" :
                 Head = loop
+                print(" *{* detected and head set to ",Head)
                 PowerThree = PowerThree + 1
                 for index in range(loop + 1,len(newstring)) :
                     
                     if newstring[index] == "{" :
+                        print("{ indexes", index)
                         PowerThree = PowerThree + 1
-                        
+                                                                                                                                                                                                                                                                                                            
                     if newstring[index] == "}" :
-                        PowerOne = PowerOne - 1
+                        PowerThree = PowerThree - 1
                     
                     if PowerThree == 0 :
                         Tail = index
+                        print(" for {} power three = 0 and now tail = ", Tail)
                         extract = newstring[Head + 1 : Tail]
                         Array.append(extract)
                         break
                     
+                if PowerThree > 0 :
+                    Array.append(newstring[index])
+        print(Array)            
         CountBracket = 0
         Concatenate =  ""
         for runner in range(len(Array)):
@@ -111,8 +132,10 @@ def isValid(s):
             for seconder in range(len(Array[runner])):
                 if (Array[runner])[seconder] == "(" or (Array[runner])[seconder] == ")" or (Array[runner])[seconder] == "[" or (Array[runner])[seconder] == "]" or (Array[runner])[seconder] == "{" or (Array[runner])[seconder] == "}" :
                     CountBracket = CountBracket + 1
-                    
-        newstring = Concatenate            
+        print("countbracket = ", CountBracket)            
+        newstring = Concatenate 
+        print("newstring = ",newstring)
+        Array = []           
         if check(newstring) == False :
             return False
         
@@ -123,11 +146,12 @@ def isValid(s):
                         
                         
                         
-# print(isValid("()"))
-# print(isValid("()[]{}"))
-print(isValid("(]"))
-print(isValid("([])"))
-print(isValid("([)]"))
+#print(isValid("()"))
+#print(isValid("()[]{}"))
+#print(isValid("(]"))
+#print(isValid("([])"))
+#print(isValid("([)]"))
+print(isValid("(){}}{"))
 
         
     
