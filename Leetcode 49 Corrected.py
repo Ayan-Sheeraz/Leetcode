@@ -1,3 +1,6 @@
+# Second ttimes the charm lets bring this anagram nonsense to an end
+# 3 jan 2026 => 2:27pm
+
 def BubbleSort(Arr):
     
     Boundary = len(Arr) - 1
@@ -14,9 +17,8 @@ def BubbleSort(Arr):
                 
         if flag == True:
             break
-    
-    return Arr
                 
+    return Arr
             
    
     
@@ -49,7 +51,9 @@ def groupAnagram(strs):
         
         ArrayCaliph[index][1] = concat
         
-    print("ArrayCaliph ", ArrayCaliph)   
+    print("ArrayCaliph: ", ArrayCaliph)
+        
+        
     """ ** ArrayCaliph in the position i wanted it to be ** """
     ArrayAmeer = []
     
@@ -69,11 +73,16 @@ def groupAnagram(strs):
                     
             
             ArrayAmeer.append(ArrayQazi)
+        
+    
+    print("ArrayAmeer: ", ArrayAmeer)
             
         
-    print(ArrayAmeer)
-    
+        
 groupAnagram(["eat","tea","tan","ate","nat","bat"])
-        
-
-        
+groupAnagram([""])
+groupAnagram(["a"])
+                    
+    
+    
+    
